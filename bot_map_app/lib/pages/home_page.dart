@@ -17,10 +17,13 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.deepPurple,
       ),
 
-      floatingActionButton: TextButton(
+      floatingActionButton: 
+      TextButton(
         onPressed: () {},
         child: const Text('ON'),
       ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
