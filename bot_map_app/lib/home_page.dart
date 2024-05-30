@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:bot_map/geoposition.dart';
+import 'package:bot_map/twilio_bot.dart';
+import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
           const Text("Oiiiiii"),
           ElevatedButton(
             onPressed: () {
-              getLocal();
+              sendSMS();
             },
             child: const Icon(Icons.play_arrow_outlined),
           ),

@@ -41,6 +41,8 @@ dependencies:
   geolocator: ^11.1.0
   geocoding: ^3.0.0
 
+  twilio_flutter: ^0.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
