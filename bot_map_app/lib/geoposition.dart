@@ -25,7 +25,7 @@ Future<Position> _posicaoAtual() async {
   return await Geolocator.getCurrentPosition();
 }
 
-void getLocal() async {
+Future<String> getLocal() async {
   try {
     Position posicao = await _posicaoAtual();
     double lat = posicao.latitude;
@@ -33,10 +33,10 @@ void getLocal() async {
 
     List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
 
-    debugPrint(formatPlaceMark(placemarks[0]));
+    return formatPlaceMark(placemarks[0]);
     
   } catch (e) {
-    debugPrint("Erro: $e");
+    return "Erro: $e";
   }
 }
 
