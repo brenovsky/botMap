@@ -1,4 +1,4 @@
-import 'package:bot_map_app/pages/home_page.dart';
+import 'package:bot_map/home_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -8,10 +8,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title:'BotMap',
+      title: 'BotMap',
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Bot Map Breno'),
+        ),
+        body: const HomePage(),
+      ),
     );
   }
-  
 }
+
