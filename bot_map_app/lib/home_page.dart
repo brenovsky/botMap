@@ -30,10 +30,11 @@ void getLocalization() async {
     double lat = posicao.latitude;
     double long = posicao.longitude;
 
-    print("Latitude: $lat, Longitude: $long");
+    debugPrint("Latitude: $lat, Longitude: $long");
   } catch (e) {
-    print("Erro: $e");
+    debugPrint("Erro: $e");
   }
+  
 }
 
 class HomePage extends StatelessWidget {
