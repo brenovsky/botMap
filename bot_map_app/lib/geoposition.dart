@@ -3,23 +3,23 @@ import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 
 Future<Position> _currentPos() async {
-  LocationPermission permissao;
+  LocationPermission permission;
   bool ativado = await Geolocator.isLocationServiceEnabled();
 
   if (!ativado) {
-    return Future.error("Habilite a localização");
+    return Future.error("Turn on GPS");
   }
 
-  permissao = await Geolocator.checkPermission();
-  if (permissao == LocationPermission.denied) {
-    permissao = await Geolocator.requestPermission();
-    if (permissao == LocationPermission.denied) {
-      return Future.error("Permissão negada");
+  permission = await Geolocator.checkPermission();
+  if (permission == LocationPermission.denied) {
+    permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      return Future.error("Permission denied");
     }
   }
 
-  if (permissao == LocationPermission.deniedForever) {
-    return Future.error("Permissão negada permanentemente");
+  if (permission == LocationPermission.deniedForever) {
+    return Future.error("Permission denied forever");
   }
 
   return await Geolocator.getCurrentPosition();
@@ -36,7 +36,7 @@ Future<Placemark?> getLocal() async {
 
     return placemark;
   } catch (e) {
-    debugPrint("erro no getLocal ${e.toString()}");
+    debugPrint("error in getLocal ${e.toString()}");
     return null;
   }
 }

@@ -11,12 +11,12 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text("Oiiiiii"),
-          ElevatedButton(
+          const Text("GPS Test"),
+          FilledButton(
             onPressed: () {
               sendSMS();
             },
-            child: const Icon(Icons.play_arrow_outlined),
+            child: const Text("Click here to send your current location!"),
           ),
         ],
       ),

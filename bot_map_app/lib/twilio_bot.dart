@@ -17,11 +17,11 @@ void sendSMS() async {
 
   try {
     Placemark? loc = await getLocal();
-    String locFormatada = formatPlaceMark(loc!);
+    String formattedLoc = formatPlaceMark(loc!);
 
     final sent = await twilioFlutter.sendWhatsApp(
         toNumber: dotenv.env['DESTINATORY_NUMBER']!,
-        messageBody: '$locFormatada');
+        messageBody: 'Estou em *$formattedLoc*');
 
     debugPrint(sent.toString());
 
