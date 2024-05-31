@@ -1,4 +1,5 @@
-import 'package:bot_map/button.dart';
+import 'package:bot_map/assets/button.dart';
+import 'package:bot_map/assets/log_box.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("GPS Test"),
+          LogBox(),
           MainButton(),
         ],
       ),

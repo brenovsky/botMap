@@ -1,4 +1,4 @@
-import 'package:bot_map/my_app.dart';
+import 'package:bot_map/assets/my_app.dart';
 import 'package:flutter/material.dart';
 
 void main() {

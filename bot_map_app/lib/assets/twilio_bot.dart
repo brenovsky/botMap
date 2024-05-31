@@ -1,4 +1,4 @@
-import 'package:bot_map/geoposition.dart';
+import 'package:bot_map/assets/geoposition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geocoding/geocoding.dart';
@@ -27,6 +27,7 @@ void sendSMS() async {
 
     if (sent == 201) {
       debugPrint('Message sent successfully');
+
     } else {
       debugPrint('ERROR: $sent');
     }
