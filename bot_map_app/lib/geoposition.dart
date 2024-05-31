@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 
+// CURRENT POSITION ANDROID REQUISITION (CHECK android/app/src/main/AndroidManifest.xml (lines 34-36))
 Future<Position> _currentPos() async {
   LocationPermission permission;
   bool ativado = await Geolocator.isLocationServiceEnabled();
@@ -27,14 +28,15 @@ Future<Position> _currentPos() async {
 
 Future<Placemark?> getLocal() async {
   try {
-    Position posicao = await _currentPos();
-    double lat = posicao.latitude;
-    double long = posicao.longitude;
+    Position position = await _currentPos();
+    double lat = position.latitude;
+    double long = position.longitude;
 
     List<Placemark> placemarks = await placemarkFromCoordinates(lat, long);
     Placemark placemark = placemarks[0];
 
     return placemark;
+
   } catch (e) {
     debugPrint("error in getLocal ${e.toString()}");
     return null;

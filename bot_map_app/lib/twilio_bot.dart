@@ -28,9 +28,9 @@ void sendSMS() async {
     if (sent == 201) {
       debugPrint('Message sent successfully');
     } else {
-      debugPrint('ERRO $sent');
+      debugPrint('ERROR: $sent');
     }
   } catch (e) {
-    debugPrint('ERRO: $e');
+    debugPrint('ERROR: $e');
   }
 }
