@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          LogBox(),
+          SizedBox(height: 300, width: 400, child: LogBox()),
           MainButton(),
         ],
       ),

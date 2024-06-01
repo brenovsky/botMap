@@ -1,4 +1,5 @@
 import 'package:bot_map/assets/geoposition.dart';
+import 'package:bot_map/assets/log_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geocoding/geocoding.dart';
@@ -18,7 +19,7 @@ void sendSMS() async {
   try {
     Placemark? loc = await getLocal();
     String formattedLoc = formatPlaceMark(loc!);
-
+    
     final sent = await twilioFlutter.sendWhatsApp(
         toNumber: dotenv.env['DESTINATORY_NUMBER']!,
         messageBody: 'Estou em *$formattedLoc*');
@@ -27,10 +28,13 @@ void sendSMS() async {
 
     if (sent == 201) {
       debugPrint('Message sent successfully');
-
+      printLogMes(formattedLoc, sent);
     } else {
       debugPrint('ERROR: $sent');
     }
+
+
+
   } catch (e) {
     debugPrint('ERROR: $e');
   }
